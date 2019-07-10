@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: dubbo-test-provider
+
+dubbo:
+  application:
+    id: dubbo-test-provider
+    name: dubbo-test-provider
+  protocol:
+    id: dubbo
+    name: dubbo
+    port: 20880
+  registry:
+    id: my-registry
+    address: zookeeper://127.0.0.1:2181
+  scan:
+    basePackages: com.zzd.dubbo.server.service.impl
+
+server:
+  port: 9090

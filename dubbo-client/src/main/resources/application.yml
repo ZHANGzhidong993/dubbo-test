@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: dubbo-test-customer
+
+dubbo:
+  registry:
+    id: my-registry
+    address: zookeeper://127.0.0.1:2181
+  application:
+    id: dubbo-test-customer
+    name: dubbo-test-customer
+server:
+  port: 9091
+management:
+  server:
+    port: 9092
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    dubbo:
+      enabled: true
+    dubbo-shutdown:
+      enabled: true
+    dubbo-configs:
+      enabled: true
+    dubbo-services:
+      enabled: true
+    dubbo-references:
+      enabled: true
+    dubbo-properties:
+      enabled: true
+    health.dubbo.status.defaults: memory
+
+endpoints.dubbo.enabled: true
